@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palme d'Or Aïnon-Vi Industry - Portfolio Officiel & Références Clients</title>
+    <style>
+        /* --- CHARTE GRAPHIQUE RESPECTANT LE LOGO --- */
+        :root {
+            --primary-color: #187A29;   /* Vert végétal officiel */
+            --secondary-color: #E59212; /* Or brillant */
+            --dark-bronze: #844315;     /* Bronze chaleureux */
+            --light-bg: #fdfbf7;
+            --text-color: #2b2b2b;
+            --border-color: #e2e8f0;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 30px 10px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        /* --- BARRE D'ACTIONS WEB --- */
+        .action-bar {
+            max-width: 960px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--primary-color);
+            padding: 15px 25px;
+            border-radius: 8px;
+            color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .btn-print {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-print:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+            transform: scale(1.03);
+        }
+
+        /* --- EN-TÊTE : LOGO + NOM CÔTE À CÔTE --- */
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 25px;
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+
+        .logo-wrapper {
+            flex-shrink: 0;
+        }
+
+        .logo-wrapper img {
+            height: 105px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .company-details h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .company-details .subtitle {
+            margin: 5px 0 0 0;
+            color: var(--dark-bronze);
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .company-details .meta-info {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* --- DEVISE DE L'ENTREPRISE --- */
+        .motto-box {
+            text-align: center;
+            margin: 25px 0;
+            font-style: italic;
+            color: #555;
+            font-size: 15px;
+            border-top: 1px dashed var(--border-color);
+            border-bottom: 1px dashed var(--border-color);
+            padding: 12px 0;
+        }
+
+        .values-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: 5px;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* --- STRUCTURE DES SECTIONS --- */
+        .section-block {
+            margin-bottom: 45px;
+            padding-bottom: 10px;
+        }
+
+        h2.section-title {
+            color: var(--primary-color);
+            font-size: 22px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* --- SECTION 1 : EXPERTISES --- */
+        .grid-expertise {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card-expertise {
+            background: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .card-expertise h3 {
+            margin-top: 0;
+            color: var(--dark-bronze);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* --- SECTION 2 : CONFIGURATION DES MACHINES (CATALOGUE) --- */
+        .machine-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 35px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .machine-title-bar {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 12px 20px;
+            margin: 0;
+            font-size: 17px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .machine-body {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 25px;
+            padding: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .machine-body { grid-template-columns: 1fr; }
+        }
+
+        .machine-text p {
+            margin-top: 0;
+            text-align: justify;
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 12px;
+        }
+
+        .table-specs {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .table-specs td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+
+        .table-specs td:first-child {
+            font-weight: 600;
+            color: var(--dark-bronze);
+            width: 45%;
+        }
+
+        .badge-price {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: var(--primary-color);
+            font-weight: 400;
+            font-size: 18px;
+            padding: 6px 16px;
+            border-radius: 4px;
+            border: 1px dashed var(--primary-color);
+        }
+
+        .machine-image-holder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+            border: 1px solid #f0f0f0;
+            border-radius: 6px;
+            padding: 10px;
+            min-height: 220px;
+        }
+
+        .machine-image-holder img {
+            max-width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        /* --- SECTION 3 : INTERACTIVITÉ & ONGLETS FACTURES --- */
+        .tabs-container {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--white);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            background: var(--light-bg);
+            border-color: var(--primary-color);
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .client-info-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background: var(--light-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        .client-info-box p { margin: 5px 0; }
+
+        .table-invoice {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .table-invoice th {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: left;
+            padding: 12px;
+            font-size: 15px;
+        }
+
+        .table-invoice td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 15px;
+        }
+
+        .row-total td {
+            font-weight: 700;
+            text-align: right;
+            background: #fafafa;
+        }
+
+        .row-total-final td {
+            font-weight: 700;
+            text-align: right;
+            background: #e8f5e9;
+            color: var(--primary-color);
+            font-size: 18px;
+            border-top: 2px solid var(--primary-color);
+        }
+
+        /* --- SECTION 4 : CONDITIONS, RIB & SIGNATURES --- */
+        .conditions-list {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .conditions-list li {
+            margin-bottom: 8px;
+        }
+
+        .rib-box {
+            background: var(--light-bg);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .signature-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .signature-block {
+            border: 1px dashed var(--border-color);
+            padding: 30px 15px;
+            border-radius: 6px;
+            min-height: 120px;
+        }
+
+        .signature-title {
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--dark-bronze);
+        }
+
+        /* --- STYLISATION CHIRURGICALE POUR L'IMPRESSION PDF --- */
+        @media print {
+            body {
+                background-color: var(--white);
+                padding: 0;
+                margin: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .action-bar, .tabs-container {
+                display: none !important; /* On cache les boutons web et onglets */
+            }
+
+            /* CHAQUE GRANDE SECTION COMMENCE STRICTEMENT SUR UNE NOUVELLE PAGE */
+            .section-page-break {
+                break-before: page;
+                page-break-before: always;
+                padding-top: 30px;
+            }
+
+            #section-1 {
+                break-before: auto;
+                page-break-before: auto; /* La première section n'a pas besoin de saut */
+            }
+
+            /* Interdiction de diviser un élément sur deux pages */
+            .machine-card, .card-expertise, .client-info-box, .table-invoice, tr, .signature-block {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .badge-price {
+                background: none !important;
+                border: 1px solid var(--primary-color);
+            }
+            
+            .row-total-final td {
+                background: none !important;
+                border: 2px solid var(--primary-color) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRE D'ACTION COMMUNE (WEB UNIQUEMENT) -->
+    <div class="action-bar">
+        <div>
+            <strong>Mode web</strong>
+        </div>
+        <button class="btn-print" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+    </div>
+
+    <div class="container">
+
+        <!-- PAGE de GARDE -->
+        <section class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-100 mb-10 premium-shadow relative overflow-hidden print-full-width">
+            <div class="absolute top-0 left-0 w-3 h-full bg-poagreen"></div>
+            <div class="absolute top-0 right-0 w-3 h-full bg-poagold"></div>
+            
+            <div class="text-center">
+                <span class="text-poagreen font-extrabold tracking-widest text-xs uppercase bg-emerald-50 px-3 py-1 rounded-full">République du Bénin</span>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+                    <img src="Logo_POAI_offciel.png" alt="Logo POAI" class="w-32 h-auto object-contain bg-slate-50 p-2 rounded-2xl border border-slate-100" onerror="this.src='https://placehold.co/150x150/ffffff/187a29?text=Palme+d%27Or'">
+                    <div class="text-left">
+                        <h1 class="text-4xl sm:text-5xl font-black text-poagreen leading-tight">PALME D'OR</h1>
+                        <h2 class="text-xl sm:text-2xl font-bold text-poagold tracking-wide mt-1">AÏNON-VI INDUSTRY</h2>
+                        <p class="text-xs text-poabronze font-semibold mt-1">N° IFU : 0202568349312</p>
+                    </div>
+                </div>
+                
+                <p class="text-slate-500 italic mt-6 max-w-xl mx-auto text-sm sm:text-base">« Excellence — Innovation — Tradition — Qualité au cœur de la mécanisation ouest-africaine »</p>
+                
+                <div class="my-8 border-y-2 border-slate-100 py-6 px-4 bg-poalight/50 rounded-2xl max-w-3xl mx-auto">
+                    <h3 class="text-xl sm:text-3xl font-extrabold text-poagreen uppercase tracking-tight">PORTFOLIO DE RÉALISATIONS</h3>
+                    <p class="text-sm text-slate-600 font-semibold mt-1">Dossier de Références Techniques & Fiches d'Installations Clients</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto text-sm">
+                    <div class="bg-slate-50 p-5 rounded-2xl border-l-4 border-poagreen">
+                        <h4 class="font-bold text-poagreen text-base mb-2">Atelier & Siège Constructeur</h4>
+                        <p class="font-semibold text-slate-800">PALME D'OR A.I</p>
+                        <p class="text-slate-600">Ouando, LOT 160</p>
+                        <p class="text-slate-600">Porto-Novo, Bénin</p>
+                        <p class="text-poabronze font-mono mt-1 text-xs">Email : palmedor.industry@gmail.com</p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-2xl border-l-4 border-poagold">
+                        <h4 class="font-bold text-poadark text-base mb-2">Direction Opérationnelle</h4>
+                        <p class="font-semibold text-slate-800">M. Noukpo Lopez AKOGNINOU (Directeur Général)</p>
+                        <p class="text-slate-600">Téléphone Direct : <span class="font-semibold text-poagreen">+229 01 66 77 59 65</span></p>
+                        <p class="text-slate-600">Garanties constructeurs de 12 mois appliquées d'office</p>
+                        <p class="text-poagold font-semibold mt-1 text-xs">RIB Bancaire certifié inclus</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 1 : EXPERTISES ET MÉTIERS (Page 1)
+             ========================================================================== -->
+        <section class="section-block section-page-break" id="section-1">
+            <h2 class="section-title">1. Domaines d'Expertise & Métiers</h2>
+            <p>La société <strong>PALME D'OR AÏNON-VI INDUSTRY</strong> résout le problème de l'industrialisation locale des cultures d'Afrique de l'Ouest. Nous concevons, développons et assemblons des lignes complètes de traitement pour la transformation agro-industrielle :</p>
+            
+            <div class="grid-expertise">
+                <div class="card-expertise">
+                    <span class="text-2xl">🌴</span>
+                    <h3>Régimes de palme</h3>
+                    <p>Lignes d'extraction complètes d'huile rouge (du régime au clarificateur).</p>
+                </div>
+                <div class="card-expertise">
+                    <span class="text-2xl">🌾</span>
+                    <h3>Céréales & tubercules</h3>
+                    <p>Roulage, calibrage et séchage des farines (Mil, Maïs, Blé, Manioc).</p>
+                </div>
+                <div class="card-expertise">
+                    <span class="text-2xl">🧃</span>
+                    <h3>Soudure & Chaudronnerie</h3>
+                    <p>Structure mécano-soudée complète, métaux robustes et acier semi-inox alimentaire.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 2 : CATALOGUE TECHNIQUE COMPLET (Page 2)
+             ========================================================================== -->
+        <section class="section-block section-page-break" id="section-2">
+            <h2 class="section-title">2. Fiches Techniques des Équipements</h2>
+            <p>Découvrez notre gamme de machines construites en atelier pour la transformation céréalière et l'extraction oléagineuse.</p>
+
+            <!-- Machine 1 (Nouveau : Rouleur Calibreur) -->
+            <div class="machine-card">
+                <h3 class="machine-title-bar">1. ROULEUR CALIBREUR POUR MIL &amp; CÉRÉALES (Modèle: DNP-1000)</h3>
+                <div class="machine-body">
+                    <div class="machine-text">
+                        <p><strong>Description :</strong> Machine destinée à la transformation de plusieurs cultures dont le mil en granulés. Permet également la production d'Aklui (maïs), de couscous de blé ou de granules d'Attiéké (manioc).</p>
+                        <table class="table-specs">
+                            <tr><td>Construction</td><td>Mécano soudage complet</td></tr>
+                            <tr><td>Capacité de traitement</td><td>200 kg de produits / heure</td></tr>
+                            <tr><td>Rendement au roulage</td><td>95%</td></tr>
+                            <tr><td>Taille des granules</td><td>Tamis interchangeables : 2mm, 3mm, 5mm</td></tr>
+                            <tr><td>Motorisation</td><td>Électrique avec 3 Chevaux (3 CV)</td></tr>
+                            <tr><td>Matière</td><td>Semi-inoxydable</td></tr>
+                        </table>
+                        <div class="badge-price">Prix : 1 500 000 F CFA</div>
+                    </div>
+                    <div class="machine-image-holder">
+                        <img src="dpn-makadix.png" alt="Rouleur Calibreur DNP-1000" onerror="this.src='https://placehold.co/250x200?text=Rouleur+DNP-1000'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 2 (Nouveau : Bac d'Étuvage) -->
+            <div class="machine-card">
+                <h3 class="machine-title-bar">2. BAC D'ÉTUVAGE POUR LE MIL (Modèle: DNP-1002)</h3>
+                <div class="machine-body">
+                    <div class="machine-text">
+                        <p><strong>Description :</strong> Dispositif thermique composé de la superposition de deux demi-fûts métalliques optimisés. Le demi-fût supérieur est percé de petits trous réguliers à sa base pour une pré-cuisson homogène à la vapeur.</p>
+                        <table class="table-specs">
+                            <tr><td>Construction</td><td>Mécano soudage complet</td></tr>
+                            <tr><td>Capacité de traitement</td><td>200 kg de produits / heure</td></tr>
+                            <tr><td>Régulation</td><td>Thermostat analogique de précision intégré</td></tr>
+                            <tr><td>Énergie</td><td>Raccordement Brûleur à Gaz ou Bois de brousse</td></tr>
+                            <tr><td>Matière</td><td>Bac d'étuvage Semi-inoxydable</td></tr>
+                        </table>
+                        <div class="badge-price">Prix : 600 000 F CFA</div>
+                    </div>
+                    <div class="machine-image-holder">
+                        <img src="dpn2-makadix.png" alt="Bac d'Étuvage DNP-1002" onerror="this.src='https://placehold.co/250x200?text=Bac+DNP-1002'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 3 -->
+            <div class="machine-card">
+                <h3 class="machine-title-bar">3. ÉGRAPPEUSE DE RÉGIME DE PALME (Modèle: ERP-12T)</h3>
+                <div class="machine-body">
+                    <div class="machine-text">
+                        <p><strong>Description :</strong> Tambour égrappoir rotatif type cage à écureuil permettant la séparation des fruits de la rafle par chutes successives. Les régimes progressent dans le tambour jusqu'à obtention de rafles totalement dépourvues de fruits.</p>
+                        <table class="table-specs">
+                            <tr><td>Construction</td><td>Mécano soudage complet</td></tr>
+                            <tr><td>Capacité / Jour</td><td>12 tonnes (8 heures)</td></tr>
+                            <tr><td>Motorisation</td><td>Électrique 7,5 CV ou Thermique 10 CV</td></tr>
+                            <tr><td>Performance</td><td>96% de séparation</td></tr>
+                            <tr><td>Dimensions</td><td>2,10 m × 1 m × 1,20 m</td></tr>
+                        </table>
+                        <div class="badge-price">Prix : 1 600 000 F CFA</div>
+                    </div>
+                    <div class="machine-image-holder">
+                        <img src="erpt12-nouhad.png" alt="Égrappeuse ERP-12T" onerror="this.src='https://placehold.co/250x200?text=Egrappeuse+ERP-12T'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 4 -->
+            <div class="machine-card">
+                <h3 class="machine-title-bar">4. TRIEUSE-VANEUSE DE NOIX DE PALME (Modèle: TV-1000)</h3>
+                <div class="machine-body">
+                    <div class="machine-text">
+                        <p><strong>Description :</strong> Équipement de séparation par flux d'air ventilé des grains battus de leur balle et des poussières résiduelles.</p>
+                        <table class="table-specs">
+                            <tr><td>Construction &amp; matériaux</td><td>Mécano-soudage, acier semi-inoxydable</td></tr>
+                            <tr><td>Capacité</td><td>5 tonnes / jour</td></tr>
+                            <tr><td>Motorisation</td><td>Essence, électrique, diesel (au choix)</td></tr>
+                            <tr><td>Puissance requis</td><td>16 HP Diesel (recommandé)</td></tr>
+                        </table>
+                        <div class="badge-price">Prix : 650 000 F CFA</div>
+                    </div>
+                    <div class="machine-image-holder">
+                        <img src="tv1000-nouhad.png" alt="Trieuse TV-1000" onerror="this.src='https://placehold.co/250x200?text=Trieuse+TV-1000'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 5 -->
+            <div class="machine-card">
+                <h3 class="machine-title-bar">5. CUISEUR DE NOIX DE PALME (Modèle: CNP-1200)</h3>
+                <div class="machine-body">
+                    <div class="machine-text">
+                        <p><strong>Description :</strong> Cuiseur thermique vertical destiné aux noix de palme, amandes et produits agricoles locaux. Fonctionne avec un foyer multi-combustibles.</p>
+                        <table class="table-specs">
+                            <tr><td>Matière de construction</td><td>Acier haute température A33</td></tr>
+                            <tr><td>Capacité par chargement</td><td>500 kg / heure</td></tr>
+                            <tr><td>Capacité chambre à eau</td><td>300 litres</td></tr>
+                            <tr><td>Combustibles acceptés</td><td>Bois, charbon, gas-oil, gaz</td></tr>
+                            <tr><td>Dimensions</td><td>2 m × 1,45 m × 1,55 m</td></tr>
+                        </table>
+                        <div class="badge-price">Prix : 1 200 000 F CFA</div>
+                    </div>
+                    <div class="machine-image-holder">
+                        <img src="cnp1200-nouhad.png" alt="Cuiseur CNP-1200" onerror="this.src='https://placehold.co/250x200?text=Cuiseur+CNP-1200'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 6 -->
+            <div class="machine-card">
+                <h3 class="machine-title-bar">6. PRESSE D'HUILE DE PALME (Modèle: PHP-1000)</h3>
+                <div class="machine-body">
+                    <div class="machine-text">
+                        <p><strong>Description :</strong> Presse continue de noix de palme pour extraction d'huile brute rouge. Sépare l'huile, les fibres et les noix en une seule étape fluide.</p>
+                        <table class="table-specs">
+                            <tr><td>Capacité de pressage</td><td>1 000 kg de noix / heure</td></tr>
+                            <tr><td>Taux d'extraction</td><td>98%</td></tr>
+                            <tr><td>Motorisation</td><td>Électrique ou Thermique 7,5 CV</td></tr>
+                            <tr><td>Structure</td><td>Châssis en acier mécano-soudé renforcé</td></tr>
+                            <tr><td>Dimensions</td><td>1,40 m × 1,01 m × 1,25 m</td></tr>
+                        </table>
+                        <div class="badge-price">Prix : 1 500 000 F CFA</div>
+                    </div>
+                    <div class="machine-image-holder">
+                        <img src="php1000-nouhad.png" alt="Presse PHP-1000" onerror="this.src='https://placehold.co/250x200?text=Presse+PHP-1000'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 7 -->
+            <div class="machine-card">
+                <h3 class="machine-title-bar">7. CLARIFICATEUR D'HUILE (Modèle: CLH-500)</h3>
+                <div class="machine-body">
+                    <div class="machine-text">
+                        <p><strong>Description :</strong> Clarificateur thermique d'huile brute végétale. Assure la séparation de phase huile/eau par flottation statique accélérée sous chaleur.</p>
+                        <table class="table-specs">
+                            <tr><td>Capacité de cuve</td><td>500 Litres d'huile</td></tr>
+                            <tr><td>Temps de traitement</td><td>40 à 50 minutes</td></tr>
+                            <tr><td>Énergie thermique</td><td>Bois de feu, Gaz, etc.</td></tr>
+                            <tr><td>Accessoires inclus</td><td>Réservoir d'eau, vannes de purge, filtre</td></tr>
+                            <tr><td>Sécurité intégrée</td><td>Soupape de décharge et manomètre</td></tr>
+                        </table>
+                        <div class="badge-price">Prix : 1 300 000 F CFA</div>
+                    </div>
+                    <div class="machine-image-holder">
+                        <img src="clh500-nouhad.png" alt="Clarificateur CLH-500" onerror="this.src='https://placehold.co/250x200?text=Clarificateur+CLH-500'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 3 : COMPTABILITÉ & PROFORMA DYNAMIQUE (Page 3)
+             ========================================================================== -->
+        <section class="section-block section-page-break" id="section-3">
+            <h2 class="section-title">3. Facture Proforma Officielle</h2>
+            
+            <!-- Sélecteur d'onglets interactif (Masqué à l'impression) -->
+            <div class="tabs-container">
+                <button class="tab-btn active" id="tab-p1" onclick="switchProforma('p1')">Proforma #1 (Rouleur - MAKADIX)</button>
+                <button class="tab-btn" id="tab-p2" onclick="switchProforma('p2')">Proforma #2 (Bac d'Étuvage - MAKADIX)</button>
+                <button class="tab-btn" id="tab-p3" onclick="switchProforma('p3')">Proforma #3 (Ligne Huile - SABEH)</button>
+            </div>
+
+            <!-- Conteneur d'affichage de la facture -->
+            <div id="proforma-paper-box">
+                <div class="client-info-box">
+                    <div>
+                        <p><strong>PROFORMA N° :</strong> <span id="prof-id">00102505</span></p>
+                        <p><strong>Date d'émission :</strong> <span id="prof-date">30/03/2026</span></p>
+                        <p><strong>Validité :</strong> 60 Jours</p>
+                    </div>
+                    <div>
+                        <p><strong>PRESTATAIRE :</strong> Palme d'Or Aïnon-Vi Industry</p>
+                        <p><strong>CLIENT :</strong> <span id="client-name">Société MAKADIX</span></p>
+                        <p><strong>Contact :</strong> <span id="client-phone">+229 96 31 72 66</span></p>
+                        <p><strong>Adresse :</strong> <span id="client-address">BÉNIN (IFU 3202011844492)</span></p>
+                    </div>
+                </div>
+
+                <table class="table-invoice">
+                    <thead>
+                        <tr>
+                            <th>Réf.</th>
+                            <th>Désignation des Équipements Éligibles</th>
+                            <th>Qté</th>
+                            <th>Prix Unitaire (FCFA)</th>
+                            <th>Montant Total (FCFA)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="prof-items">
+                        <!-- Les lignes dynamiques seront injectées ici par JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             SECTION 4 : CONDITIONS COMMERCIALES, RIB & SIGNATURE (Page 4)
+             ========================================================================== -->
+        <section class="section-block section-page-break" id="section-4">
+            <h2 class="section-title">4. Conditions Commerciales &amp; Coordonnées Bancaires</h2>
+            
+            <ul class="conditions-list">
+                <li id="delivery-details"><strong>Délai de fabrication et livraison :</strong> 3 semaines maximum.</li>
+                <li><strong>Modalités de règlement obligatoires :</strong>
+                    <ul>
+                        <li><strong>80% d'acompte</strong> à la commande pour déclenchement de la fabrication en atelier.</li>
+                        <li><strong>20% de solde</strong> après phase de tests usine, validation stricte par le client et avant expédition.</li>
+                    </ul>
+                </li>
+                <li id="guarantee-details"><strong>Garantie constructeur :</strong> 12 mois complets appliqués d'office sur chaque machine.</li>
+            </ul>
+
+            <h3>Coordonnées Bancaires Officielles (RIB)</h3>
+            <p>Les règlements de factures doivent être effectués directement sur le compte bancaire ci-dessous :</p>
+            <div class="rib-box">
+                <strong>RIB BANCAIRE :</strong> 2106701508 50850 00247 1965
+            </div>
+
+            <!-- ZONE DE VALIDATION DES SIGNATURES -->
+            <div class="signature-container">
+                <div class="signature-block">
+                    <div class="signature-title">Pour le Client (<span id="sign-client-name">Société MAKADIX</span>)<br><small>Précédé de "Lu et approuvé"</small></div>
+                </div>
+                <div class="signature-block">
+                    <div class="signature-title">Pour Palme d'Or A.I (Le Directeur)<br><strong>M. AKOGNINOU NOUKPO LOPEZ</strong></div>
+                </div>
+            </div>
+        </section>
+<!-- GARANTIES & CONDITIONS LOGISTIQUES -->
+        <section class="bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-slate-100 mb-10 premium-shadow print-full-width">
+            <h2 class="text-xl sm:text-2xl font-black text-poagreen border-b border-slate-100 pb-3 mb-6">4. Garanties Constructeur & Engagement de Coopération</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-stone-50 p-5 rounded-2xl border-t-4 border-poagreen">
+                    <h3 class="font-bold text-slate-800 text-sm mb-2">⏱️ Délais d'Usinage Maîtrisés</h3>
+                    <p class="text-slate-600 text-xs">
+                        Nos ateliers s'engagent sur un délai d'usinage standard de <strong>3 semaines</strong> pour les unités unitaires (moulins, étuvages). Pour les lignes complètes de traitement (Côte d'Ivoire), un délai global de <strong>3 mois et 2 semaines</strong> est appliqué avec livraison douanière intégrée.
+                    </p>
+                </div>
+                <div class="bg-stone-50 p-5 rounded-2xl border-t-4 border-poagold">
+                    <h3 class="font-bold text-slate-800 text-sm mb-2">💳 Sécurisation des Acomptes</h3>
+                    <p class="text-slate-600 text-xs">
+                        Pour sécuriser la relation contractuelle, les commandes sont financées à hauteur de 80% au lancement de la découpe des métaux en atelier, les 20% restants n'étant versés qu'après tests validés en usine par le client signataire.
+                    </p>
+                </div>
+                <div class="bg-stone-50 p-5 rounded-2xl border-t-4 border-poabronze">
+                    <h3 class="font-bold text-slate-800 text-sm mb-2">🛡️ Garantie Pièces & Châssis</h3>
+                    <p class="text-slate-600 text-xs">
+                        Chaque équipement bénéficie d'une <strong>garantie complète de 12 mois</strong> couvrant les moteurs, les pièces d'usure mécanique et la solidité des assemblages mécano-soudés avec intervention sur site.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================================================
+         SCRIPT JAVASCRIPT : MOTEUR D'INTERACTIVITÉ ET CALCUL DE FACTURE
+         ========================================================================== -->
+    <script>
+        const proformaData = {
+            p1: {
+                id: "00102505",
+                date: "30/03/2026",
+                clientName: "Société MAKADIX",
+                clientPhone: "+229 96 31 72 66",
+                clientAddress: "BÉNIN (IFU 3202011844492)",
+                deliveryDetails: "3 semaines maximum.",
+                subtotal: 1500000,
+                tax: 10000,
+                deliveryCost: 0,
+                totalTTC: 1510000,
+                guarantee: "12 mois complets appliqués d'office sur chaque machine.",
+                items: [
+                    { ref: "DNP-1000", name: "Rouleur Calibreur pour Mil (Modèle DNP-1000)", qty: 1, up: 1500000, total: 1500000 }
+                ]
+            },
+            p2: {
+                id: "00102505",
+                date: "30/03/2026",
+                clientName: "Société MAKADIX",
+                clientPhone: "+229 96 31 72 66",
+                clientAddress: "BÉNIN (IFU 3202011844492)",
+                deliveryDetails: "3 semaines maximum.",
+                subtotal: 600000,
+                tax: 10000,
+                deliveryCost: 0,
+                totalTTC: 610000,
+                guarantee: "12 mois complets appliqués d'office sur chaque machine.",
+                items: [
+                    { ref: "DNP-1002", name: "Bac d'Étuvage pour le Mil (Modèle DNP-1002)", qty: 1, up: 600000, total: 600000 }
+                ]
+            },
+            p3: {
+                id: "00102505",
+                date: "10/11/2025",
+                clientName: "M. Nouhad SABEH",
+                clientPhone: "+225 81 45 99 35",
+                clientAddress: "Côte d'Ivoire (Exportation)",
+                deliveryDetails: "3 mois et 2 semaines.",
+                subtotal: 6250000,
+                tax: 725000,
+                deliveryCost: 1000000,
+                totalTTC: 7975000,
+                guarantee: "12 mois complets appliqués d'office sur chaque machine.",
+                items: [
+                    { ref: "ERP-12T", name: "Égrappeuse mécanique de régimes de palme (ERP-12T)", qty: 1, up: 1600000, total: 1600000 },
+                    { ref: "TV-1000", name: "Trieuse-vaneuse ventilée de noix (TV-1000)", qty: 1, up: 650000, total: 650000 },
+                    { ref: "CNP-1200", name: "Cuiseur multi-combustibles vertical (CNP-1200)", qty: 1, up: 1200000, total: 1200000 },
+                    { ref: "PHP-1000", name: "Presse d'extraction d'huile continue (PHP-1000)", qty: 1, up: 1500000, total: 1500000 },
+                    { ref: "CLH-500", name: "Clarificateur thermique de fluide (CLH-500)", qty: 1, up: 1300000, total: 1300000 }
+                ]
+            }
+        };
+
+        function formatNumber(num) {
+            return new Intl.NumberFormat('fr-FR').format(num);
+        }
+
+        function switchProforma(key) {
+            const data = proformaData[key];
+            if (!data) return;
+
+            // Mise à jour des informations client
+            document.getElementById('prof-id').innerText = data.id;
+            document.getElementById('prof-date').innerText = data.date;
+            document.getElementById('client-name').innerText = data.clientName;
+            document.getElementById('client-phone').innerText = data.clientPhone;
+            document.getElementById('client-address').innerText = data.clientAddress;
+            
+            // Mise à jour de la signature
+            document.getElementById('sign-client-name').innerText = data.clientName;
+
+            // Mise à jour des conditions de livraison et garanties de la section 4
+            document.getElementById('delivery-details').innerHTML = `<strong>Délai de fabrication et livraison :</strong> ${data.deliveryDetails}`;
+            document.getElementById('guarantee-details').innerHTML = `<strong>Garantie constructeur :</strong> ${data.guarantee}`;
+
+            // Remplissage dynamique du tableau de facturation
+            const tbody = document.getElementById('prof-items');
+            tbody.innerHTML = '';
+
+            data.items.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${item.ref}</strong></td>
+                    <td>${item.name}</td>
+                    <td>${item.qty}</td>
+                    <td>${formatNumber(item.up)}</td>
+                    <td>${formatNumber(item.total)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Gestion des taxes, transports et totaux calculés
+            const taxLabel = key === 'p3' ? "Impôt / Douane (10%) :" : "Impôt sur le Revenu (1% de Tasse) :";
+            const tvaLabel = key === 'p3' ? "N/A (Exonéré / Exportation)" : "Exonéré (Marché Local)";
+
+            const trSub = document.createElement('tr');
+            trSub.className = 'row-total';
+            trSub.innerHTML = `
+                <td colspan="4"><strong>TOTAL HORS TAXES (HT) :</strong></td>
+                <td><strong>${formatNumber(data.subtotal)}</strong></td>
+            `;
+            tbody.appendChild(trSub);
+
+            if (data.deliveryCost > 0) {
+                const trDeliv = document.createElement('tr');
+                trDeliv.className = 'row-total';
+                trDeliv.innerHTML = `
+                    <td colspan="4">Logistique, Transport International &amp; Douane :</td>
+                    <td>${formatNumber(data.deliveryCost)}</td>
+                `;
+                tbody.appendChild(trDeliv);
+            }
+
+            const trTax = document.createElement('tr');
+            trTax.className = 'row-total';
+            trTax.innerHTML = `
+                <td colspan="4">${taxLabel}</td>
+                <td>${formatNumber(data.tax)}</td>
+            `;
+            tbody.appendChild(trTax);
+
+            const trTVA = document.createElement('tr');
+            trTVA.className = 'row-total';
+            trTVA.innerHTML = `
+                <td colspan="4">TVA :</td>
+                <td>${tvaLabel}</td>
+            `;
+            tbody.appendChild(trTVA);
+
+            const trFinal = document.createElement('tr');
+            trFinal.className = 'row-total-final';
+            trFinal.innerHTML = `
+                <td colspan="4">TOTAL NET À PAYER TTC (FCFA) :</td>
+                <td>${formatNumber(data.totalTTC)}</td>
+            `;
+            tbody.appendChild(trFinal);
+
+            // Activation de la classe de l'onglet actif
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`tab-${key}`).classList.add('active');
+        }
+
+        // Chargement de la première proforma par défaut au lancement
+        window.onload = function() {
+            switchProforma('p1');
+        };
+    </script>
+</body>
+</html>

@@ -39,6 +39,103 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
 
+        /* --- STYLES DES COMPOSANTS MODERNES (CONVERSION TAILWIND) --- */
+        .bg-white { background-color: var(--white); }
+        .rounded-3xl { border-radius: 24px; }
+        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02); }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.04), 0 4px 6px -2px rgba(0,0,0,0.01); }
+        .border { border: 1px solid var(--border-color); }
+        .border-slate-100 { border-color: #f1f5f9; }
+        .mb-10 { margin-bottom: 40px; }
+        .mb-6 { margin-bottom: 24px; }
+        .mb-2 { margin-bottom: 8px; }
+        .premium-shadow { transition: transform 0.2s, box-shadow 0.2s; }
+        .premium-shadow:hover { transform: translateY(-2px); }
+        .relative { position: relative; }
+        .overflow-hidden { overflow: hidden; }
+        .absolute { position: absolute; }
+        .top-0 { top: 0; }
+        .left-0 { left: 0; }
+        .right-0 { right: 0; }
+        .w-3 { width: 12px; }
+        .h-full { height: 100%; }
+        .bg-poagreen { background-color: var(--primary-color); }
+        .bg-poagold { background-color: var(--secondary-color); }
+        .text-center { text-align: center; }
+        .text-poagreen { color: var(--primary-color); }
+        .font-extrabold { font-weight: 800; }
+        .tracking-widest { letter-spacing: 0.1em; }
+        .text-xs { font-size: 12px; }
+        .uppercase { text-transform: uppercase; }
+        .bg-emerald-50 { background-color: #ecfdf5; color: #065f46; }
+        .px-3 { padding-left: 12px; padding-right: 12px; }
+        .py-1 { padding-top: 4px; padding-bottom: 4px; }
+        .rounded-full { border-radius: 9999px; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .gap-4 { gap: 16px; }
+        .gap-6 { gap: 24px; }
+        .mt-6 { margin-top: 24px; }
+        .mt-1 { margin-top: 4px; }
+        .my-8 { margin-top: 32px; margin-bottom: 32px; }
+        .w-32 { width: 128px; }
+        .h-auto { height: auto; }
+        .object-contain { object-fit: contain; }
+        .bg-slate-50 { background-color: #f8fafc; }
+        .bg-stone-50 { background-color: #fbfbf9; }
+        .p-2 { padding: 8px; }
+        .p-5 { padding: 20px; }
+        .p-8 { padding: 32px; }
+        .rounded-2xl { border-radius: 16px; }
+        .text-left { text-align: left; }
+        .text-4xl { font-size: 32px; font-weight: 900; }
+        .leading-tight { line-height: 1.25; }
+        .text-xl { font-size: 20px; }
+        .font-bold { font-weight: 700; }
+        .tracking-wide { letter-spacing: 0.025em; }
+        .text-poagold { color: var(--secondary-color); }
+        .text-poabronze { color: var(--dark-bronze); }
+        .text-poadark { color: var(--dark-bronze); }
+        .text-slate-500 { color: #64748b; }
+        .italic { font-style: italic; }
+        .max-w-xl { max-width: 576px; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .border-y-2 { border-top: 2px solid var(--border-color); border-bottom: 2px solid var(--border-color); }
+        .py-6 { padding-top: 24px; padding-bottom: 24px; }
+        .px-4 { padding-left: 16px; padding-right: 16px; }
+        .text-3xl { font-size: 30px; }
+        .tracking-tight { letter-spacing: -0.025em; }
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .border-l-4 { border-left-width: 4px; border-left-style: solid; }
+        .border-t-4 { border-top-width: 4px; border-top-style: solid; }
+        .border-poagreen { border-color: var(--primary-color); }
+        .border-poagold { border-color: var(--secondary-color); }
+        .border-poabronze { border-color: var(--dark-bronze); }
+        .text-slate-600 { color: #475569; }
+        .font-mono { font-family: monospace; }
+        .text-slate-800 { color: #1e293b; }
+        .font-semibold { font-weight: 600; }
+        .pb-3 { padding-bottom: 12px; }
+        .border-b { border-bottom: 1px solid var(--border-color); }
+
+        @media (min-width: 640px) {
+            .sm\:p-12 { padding: 48px; }
+            .sm\:flex-row { flex-direction: row; }
+            .sm\:text-5xl { font-size: 40px; }
+            .sm\:text-2xl { font-size: 24px; }
+            .sm\:text-base { font-size: 16px; }
+            .sm\:text-3xl { font-size: 28px; }
+            .sm\:p-10 { padding: 40px; }
+        }
+
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+
         /* --- BARRE D'ACTIONS WEB --- */
         .action-bar {
             max-width: 960px;
@@ -240,7 +337,7 @@
             display: inline-block;
             background-color: #e8f5e9;
             color: var(--primary-color);
-            font-weight: 400;
+            font-weight: 700;
             font-size: 18px;
             padding: 6px 16px;
             border-radius: 4px;
@@ -403,16 +500,18 @@
                 display: none !important; /* On cache les boutons web et onglets */
             }
 
-            /* CHAQUE GRANDE SECTION COMMENCE STRICTEMENT SUR UNE NOUVELLE PAGE */
-            .section-page-break {
-                break-before: page;
-                page-break-before: always;
-                padding-top: 30px;
+            /* FORCE LA PAGE DE GARDE À PRENDRE UNE PAGE UNIQUE STRICTE */
+            .print-full-width {
+                break-after: page;
+                page-break-after: always !important;
+                margin-bottom: 0 !important;
             }
 
-            #section-1 {
-                break-before: auto;
-                page-break-before: auto; /* La première section n'a pas besoin de saut */
+            /* CHAQUE GRANDE SECTION COMMENCE STRICTEMENT SUR UNE NOUVELLE PAGE */
+            .section-page-break {
+                break-before: page !important;
+                page-break-before: always !important;
+                padding-top: 30px;
             }
 
             /* Interdiction de diviser un élément sur deux pages */
@@ -430,6 +529,26 @@
                 background: none !important;
                 border: 2px solid var(--primary-color) !important;
             }
+
+            /* Forcer les fonds de couleurs lors de l'impression */
+            .bg-stone-50 {
+                background-color: #fbfbf9 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .bg-slate-50 {
+                background-color: #f8fafc !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .bg-emerald-50 {
+                background-color: #ecfdf5 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .border-slate-100 {
+                border-color: #f1f5f9 !important;
+            }
         }
     </style>
 </head>
@@ -438,7 +557,7 @@
     <!-- BARRE D'ACTION COMMUNE (WEB UNIQUEMENT) -->
     <div class="action-bar">
         <div>
-            <strong>Mode web</strong>
+            <strong>Mode Aperçu Web</strong> — Configurez et enregistrez en PDF
         </div>
         <button class="btn-print" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
     </div>
@@ -489,7 +608,7 @@
         </section>
 
         <!-- ==========================================================================
-             SECTION 1 : EXPERTISES ET MÉTIERS (Page 1)
+             SECTION 1 : EXPERTISES ET MÉTIERS (Page 2 lors du PDF)
              ========================================================================== -->
         <section class="section-block section-page-break" id="section-1">
             <h2 class="section-title">1. Domaines d'Expertise & Métiers</h2>
@@ -507,7 +626,7 @@
                     <p>Roulage, calibrage et séchage des farines (Mil, Maïs, Blé, Manioc).</p>
                 </div>
                 <div class="card-expertise">
-                    <span class="text-2xl">🧃</span>
+                    <span class="text-2xl">⚙️</span>
                     <h3>Soudure & Chaudronnerie</h3>
                     <p>Structure mécano-soudée complète, métaux robustes et acier semi-inox alimentaire.</p>
                 </div>
@@ -515,7 +634,7 @@
         </section>
 
         <!-- ==========================================================================
-             SECTION 2 : CATALOGUE TECHNIQUE COMPLET (Page 2)
+             SECTION 2 : CATALOGUE TECHNIQUE COMPLET (Page 3)
              ========================================================================== -->
         <section class="section-block section-page-break" id="section-2">
             <h2 class="section-title">2. Fiches Techniques des Équipements</h2>
@@ -670,7 +789,7 @@
         </section>
 
         <!-- ==========================================================================
-             SECTION 3 : COMPTABILITÉ & PROFORMA DYNAMIQUE (Page 3)
+             SECTION 3 : COMPTABILITÉ & PROFORMA DYNAMIQUE (Page 4)
              ========================================================================== -->
         <section class="section-block section-page-break" id="section-3">
             <h2 class="section-title">3. Facture Proforma Officielle</h2>
@@ -702,7 +821,7 @@
                     <thead>
                         <tr>
                             <th>Réf.</th>
-                            <th>Désignation des Équipements Éligibles</th>
+                            <th>Désignation des équipements éligibles</th>
                             <th>Qté</th>
                             <th>Prix Unitaire (FCFA)</th>
                             <th>Montant Total (FCFA)</th>
@@ -716,7 +835,7 @@
         </section>
 
         <!-- ==========================================================================
-             SECTION 4 : CONDITIONS COMMERCIALES, RIB & SIGNATURE (Page 4)
+             SECTION 4 : CONDITIONS COMMERCIALES, RIB & SIGNATURE (Page 5)
              ========================================================================== -->
         <section class="section-block section-page-break" id="section-4">
             <h2 class="section-title">4. Conditions Commerciales &amp; Coordonnées Bancaires</h2>
@@ -748,15 +867,16 @@
                 </div>
             </div>
         </section>
-<!-- GARANTIES & CONDITIONS LOGISTIQUES -->
+
+        <!-- GARANTIES & CONDITIONS LOGISTIQUES -->
         <section class="bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-slate-100 mb-10 premium-shadow print-full-width">
-            <h2 class="text-xl sm:text-2xl font-black text-poagreen border-b border-slate-100 pb-3 mb-6">4. Garanties Constructeur & Engagement de Coopération</h2>
+            <h2 class="text-xl sm:text-2xl font-black text-poagreen border-b border-slate-100 pb-3 mb-6">Garanties Constructeur &amp; Engagement de Coopération</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-stone-50 p-5 rounded-2xl border-t-4 border-poagreen">
                     <h3 class="font-bold text-slate-800 text-sm mb-2">⏱️ Délais d'Usinage Maîtrisés</h3>
                     <p class="text-slate-600 text-xs">
-                        Nos ateliers s'engagent sur un délai d'usinage standard de <strong>3 semaines</strong> pour les unités unitaires (moulins, étuvages). Pour les lignes complètes de traitement (Côte d'Ivoire), un délai global de <strong>3 mois et 2 semaines</strong> est appliqué avec livraison douanière intégrée.
+                        Nos ateliers s'engagent sur un délai d'usinage standard de <strong>3 semaines</strong> pour les unités de transformation. Pour les lignes complètes de traitement (Côte d'Ivoire), un délai global de <strong>3 mois et 2 semaines</strong> est appliqué avec livraison douanière intégrée.
                     </p>
                 </div>
                 <div class="bg-stone-50 p-5 rounded-2xl border-t-4 border-poagold">
@@ -766,7 +886,7 @@
                     </p>
                 </div>
                 <div class="bg-stone-50 p-5 rounded-2xl border-t-4 border-poabronze">
-                    <h3 class="font-bold text-slate-800 text-sm mb-2">🛡️ Garantie Pièces & Châssis</h3>
+                    <h3 class="font-bold text-slate-800 text-sm mb-2">🛡️ Garantie Pièces &amp; Châssis</h3>
                     <p class="text-slate-600 text-xs">
                         Chaque équipement bénéficie d'une <strong>garantie complète de 12 mois</strong> couvrant les moteurs, les pièces d'usure mécanique et la solidité des assemblages mécano-soudés avec intervention sur site.
                     </p>

@@ -550,6 +550,71 @@
                 border-color: #f1f5f9 !important;
             }
         }
+        /* ==========================================================================
+   SÉCURISATION ET RESPONSIVENESS SMARTPHONE (RÈGLES SPÉCIALES MOBILE)
+   ========================================================================== */
+        table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Défilement fluide sur iOS */
+}
+@media (max-width: 768px) {
+    body {
+        padding: 15px 5px;
+    }
+
+    .container {
+        padding: 15px; /* Réduction drastique du padding interne */
+        border-radius: 6px;
+    }
+
+    .action-bar {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .btn-print {
+        width: 100%;
+    }
+
+    .header-main {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .logo-wrapper img {
+        height: 85px;
+    }
+
+    .machine-body {
+        grid-template-columns: 1fr; /* Empilement de l'image et du texte */
+        padding: 15px;
+    }
+
+    .client-info-box {
+        grid-template-columns: 1fr; /* Les infos client s'empilent */
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .signature-container {
+        grid-template-columns: 1fr; /* Les signatures s'empilent */
+        gap: 20px;
+    }
+
+    .signature-block {
+        min-height: 90px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr !important; /* Force toutes les grilles à passer à 1 colonne */
+    }
+}
+
     </style>
 </head>
 <body>
